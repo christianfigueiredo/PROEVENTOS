@@ -7,7 +7,7 @@ namespace ProEventos.API.Controllers;
 [Route("api/[controller]")]
 public class EventoController : ControllerBase
 {
-    public IEnumerable<Evento>  evento = new Evento[] {
+    public IEnumerable<Evento>  _evento = new Evento[] {
             new Evento() {
                 EventoId = 1,
                 Local = "São Paulo",
@@ -35,7 +35,14 @@ public class EventoController : ControllerBase
     [HttpGet]
     public IEnumerable<Evento> Get()
     {
-        return evento;
+        return _evento;
+
+    }
+
+    [HttpGet("{id}")]
+    public IEnumerable<Evento> GetById(int id)
+    {
+        return _evento.Where(evento => evento.EventoId == id);
 
     }
 
