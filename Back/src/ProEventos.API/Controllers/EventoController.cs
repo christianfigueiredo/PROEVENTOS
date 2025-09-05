@@ -23,9 +23,9 @@ public class EventoController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public IEnumerable<Evento> GetById(int id)
+    public Evento GetById(int id)
     {
-        return _context.Eventos.Where(evento => evento.EventoId == id).ToList();
+        return _context.Eventos.FirstOrDefault(evento => evento.EventoId == id);
 
     }
 
