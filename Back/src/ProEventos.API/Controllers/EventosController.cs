@@ -6,10 +6,10 @@ namespace ProEventos.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class EventoController : ControllerBase
+public class EventosController : ControllerBase
 {
     private readonly Contexto _context;
-    public EventoController(Contexto contexto)
+    public EventosController(Contexto contexto)
     {
         _context = contexto;
     }   
